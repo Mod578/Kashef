@@ -105,17 +105,3 @@ To run this application locally, you will need [Node.js](https://nodejs.org/) (v
     npm run dev
     ```
     The application will be available at `http://localhost:5173`.
-
-## 🤝 المساهمة (Contributing)
-
-نرحب بالمساهمات لتحسين "كاشف"! إذا كنت ترغب في المساهمة، يرجى اتباع الخطوات التالية:
-
-1.  قم بعمل Fork للمستودع.
-2.  أنشئ فرعًا جديدًا لميزتك (`git checkout -b feature/AmazingFeature`).
-3.  قم بتطبيق تغييراتك (`git commit -m 'Add some AmazingFeature'`).
-4.  ادفع إلى الفرع (`git push origin feature/AmazingFeature`).
-5.  افتح طلب سحب (Pull Request).
-
-## 📜 الترخيص (License)
-
-هذا المشروع مرخص تحت [رخصة MIT](LICENSE).
