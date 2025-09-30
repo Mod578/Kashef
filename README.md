@@ -1,7 +1,7 @@
 # Kashef - AI Hardware Component Identifier
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Mod578/Kashef/main/public/favicon.svg" alt="Kashef Logo" width="120">
+  <img src="https://raw.githubusercontent.com/Mod578/Kashef/main/public/favicon.svg"  width="120">
 </p>
 
 <h1 align="center">Kashef (كاشف)</h1>
