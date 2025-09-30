@@ -1,0 +1,16 @@
+/* Webkit scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--brand-border));
+    border-radius: 10px;
+    border: 2px solid hsl(var(--brand-bg));
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--brand-text-tertiary));
+}

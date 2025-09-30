@@ -1,0 +1,20 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>أيقونة كاشف</title>
+  <style>
+    .bg { fill: #ffffff; } /* light: white */
+    .fg { stroke: #3b82f6; } /* light: blue-500 */
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1e293b; } /* dark: slate-800 */
+      .fg { stroke: #60a5fa; } /* dark: blue-400 */
+    }
+  </style>
+  
+  <rect class="bg" width="64" height="64" rx="12"/>
+  
+  <g class="fg" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4">
+     <!-- Eye shape -->
+    <path d="M5,32 C5,32 15,19 32,19 C49,19 59,32 59,32 C59,32 49,45 32,45 C15,45 5,32 5,32 Z" />
+    <!-- Iris with CPU core -->
+    <rect x="26" y="26" width="12" height="12" rx="1.5" />
+  </g>
+</svg>

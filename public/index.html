@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>كاشف</title>
+    <meta name="description" content="كاشف: مساعدك الذكي للتعرف الفوري على مكونات الحاسب. وجّه الكاميرا لتحصل على تحديد دقيق ومعلومات مفصلة.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: 'hsl(var(--brand-primary))',
+                'primary-fg': 'hsl(var(--brand-primary-fg))',
+                bg: 'hsl(var(--brand-bg))',
+                surface: 'hsl(var(--brand-surface))',
+                'surface-alt': 'hsl(var(--brand-surface-alt))',
+                border: 'hsl(var(--brand-border))',
+                'text-primary': 'hsl(var(--brand-text-primary))',
+                'text-secondary': 'hsl(var(--brand-text-secondary))',
+                'text-tertiary': 'hsl(var(--brand-text-tertiary))',
+                danger: 'hsl(var(--brand-danger))',
+                accent: 'hsl(var(--brand-accent))',
+              }
+            },
+            fontFamily: {
+              sans: ['IBM Plex Sans Arabic', 'sans-serif'],
+            },
+            borderRadius: {
+              'xl': '0.75rem',
+              '2xl': '1rem',
+              '3xl': '1.5rem',
+            },
+            keyframes: {
+              'fade-in': {
+                'from': { opacity: '0' },
+                'to': { opacity: '1' },
+              },
+              'slide-up': {
+                'from': { transform: 'translateY(20px)', opacity: '0' },
+                'to': { transform: 'translateY(0)', opacity: '1' },
+              },
+              'shimmer': {
+                '0%': { backgroundPosition: '-1000px 0' },
+                '100%': { backgroundPosition: '1000px 0' },
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.2s ease-out',
+              'slide-up': 'slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+              'shimmer': 'shimmer 2s infinite linear',
+            },
+          },
+        },
+        plugins: [],
+      }
+    </script>
+    <style>
+      :root {
+        --brand-danger: 0 84% 60%;
+        --app-height: 100vh;
+      }
+      html[data-theme='dark'] {
+        --brand-primary: 158 90% 50%;
+        --brand-primary-fg: 158 100% 10%;
+        --brand-accent: 158 90% 50%;
+        --brand-bg: 220 20% 6%;
+        --brand-surface: 220 15% 13%;
+        --brand-surface-alt: 220 15% 19%;
+        --brand-border: 220 15% 28%;
+        --brand-text-primary: 215 20% 90%;
+        --brand-text-secondary: 215 16% 65%;
+        --brand-text-tertiary: 215 14% 45%;
+      }
+      html[data-theme='light'] {
+        --brand-primary: 158 80% 40%;
+        --brand-primary-fg: 255 100% 100%;
+        --brand-accent: 158 80% 40%;
+        --brand-bg: 220 30% 97%;
+        --brand-surface: 255 100% 100%;
+        --brand-surface-alt: 220 16% 96%;
+        --brand-border: 220 20% 88%;
+        --brand-text-primary: 222 47% 11%;
+        --brand-text-secondary: 222 8% 45%;
+        --brand-text-tertiary: 222 7% 55%;
+      }
+      body {
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        background-color: hsl(var(--brand-bg));
+        color: hsl(var(--brand-text-primary));
+        overscroll-behavior: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "vite": "https://aistudiocdn.com/vite@^7.1.7",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.3",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+    "react-hot-toast": "https://aistudiocdn.com/react-hot-toast@^2.6.0",
+    "react-icons/": "https://aistudiocdn.com/react-icons@^5.5.0/",
+    "react-icons": "https://aistudiocdn.com/react-icons@^5.5.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
