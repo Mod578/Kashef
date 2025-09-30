@@ -1,11 +1,11 @@
 <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
   <title>شعار كاشف - منظار ومعالج</title>
   <style>
-    .bg { fill: #ffffff; }
-    .fg { stroke: #3b82f6; }
+    .bg { fill: #f8fafc; }
+    .fg { stroke: #2563eb; }
     @media (prefers-color-scheme: dark) {
-      .bg { fill: #1e293b; }
-      .fg { stroke: #60a5fa; }
+      .bg { fill: #172554; }
+      .fg { stroke: #38bdf8; }
     }
   </style>
 
