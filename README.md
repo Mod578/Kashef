@@ -1,7 +1,36 @@
 # Kashef - AI Hardware Component Identifier
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/Mod578/Kashef/public/favicon.svg"  width="120">
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <title>شعار كاشف - منظار ومعالج</title>
+  <style>
+    .bg { fill: #ffffff; }
+    .fg { stroke: #3b82f6; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #1e293b; }
+      .fg { stroke: #60a5fa; }
+    }
+  </style>
+
+  <!-- خلفية -->
+  <rect class="bg" width="64" height="64" rx="12"/>
+  
+  <g class="fg" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- العدسة (دائرة المنظار) -->
+    <circle cx="28" cy="28" r="14"/>
+    
+    <!-- مقبض المنظار -->
+    <line x1="38" y1="38" x2="50" y2="50"/>
+    
+    <!-- المعالج داخل العدسة -->
+    <rect x="22" y="22" width="12" height="12" rx="2"/>
+    <!-- أرجل المعالج -->
+    <line x1="28" y1="18" x2="28" y2="20"/>
+    <line x1="28" y1="36" x2="28" y2="38"/>
+    <line x1="18" y1="28" x2="20" y2="28"/>
+    <line x1="36" y1="28" x2="38" y2="28"/>
+  </g>
+</svg>
 </p>
 
 <h1 align="center">Kashef (كاشف)</h1>
