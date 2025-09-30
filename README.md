@@ -1,102 +1,110 @@
-# كاشف (Kashef) - معرف مكونات الحاسب الآلي
+# Kashef - AI Hardware Component Identifier
 
-"كاشف" هو تطبيق ويب ذكي يحلل مكونات الحاسب الآلي فورًا باستخدام الكاميرا والذكاء الاصطناعي، مع إمكانية حفظ سجل بفحوصاتك السابقة.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Mod578/Kashef/main/public/favicon.svg" alt="Kashef Logo" width="120">
+</p>
 
-**المشكلة:** التعرف على قطع الكمبيوتر الداخلية وفهمها يُعد تحديًا لغير الخبراء.
+<h1 align="center">Kashef (كاشف)</h1>
 
-**الحل:**
-1.  **صوّر وتعرّف:** وجّه الكاميرا لتحصل على تحديد فوري للمكونات.
-2.  **احصل على تفاصيل:** استعرض ملخصًا فنيًا ومواصفات رئيسية لكل قطعة.
-3.  **اسأل الخبير:** تحدث مع مساعد ذكي للإجابة على جميع استفساراتك.
-4.  **احفظ وارجع:** قم بحفظ نتائج الفحص للرجوع إليها ومقارنتها لاحقًا.
+<p align="center">
+  An intelligent web application that instantly identifies PC components using your device's camera and AI, with features for saving and reviewing your scan history.
+</p>
 
-الهدف هو تمكين الجميع من فهم أجهزتهم وتطويرها بثقة، بغض النظر عن خبرتهم التقنية.
+<p align="center">
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
+  <img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white" alt="Google Gemini">
+</p>
 
-تم تطوير هذا المشروع كمشروع تخرج نهائي لدبلوم علوم البيانات والذكاء الاصطناعي في أكاديمية طويق.
+---
 
-## ✨ المميزات الرئيسية
+## 🎯 The Goal
 
-*   **تعرف فوري بالكاميرا:** وجّه كاميرا جهازك أو ارفع صورة للتعرف المباشر على المكونات.
-*   **تحديد دقيق بالذكاء الاصطناعي:** يستخدم Google Gemini API لتحديد المكونات بدقة مع هندسة أوامر محسّنة للسرعة والدقة.
-*   **تفاصيل شاملة:** احصل على ملخص فني، مواصفات رئيسية، وصورة توضيحية لكل مكون.
-*   **مساعد ذكي:** اسأل عن أي شيء يتعلق بمكونات الكمبيوتر واحصل على إجابات مدعومة ببحث Google.
-*   **سجل الفحوصات:** احفظ نتائج الفحص الحالية باسم مخصص واستعرضها في أي وقت.
-*   **وضع تجريبي:** استكشف إمكانيات التطبيق مع بيانات مُعدة مسبقًا لسيناريوهات مختلفة.
-*   **تجربة مستخدم محسّنة:** واجهة متجاوبة، دعم للوضع الفاتح والداكن، وحالات تحميل تفاعلية (Skeleton Loaders).
+The world of PC hardware can be intimidating for newcomers. "Kashef" (Arabic for "Detector" or "Revealer") aims to demystify computer components by providing a simple, visual way to identify parts and understand their purpose.
 
-## 🚀 كيف يعمل
+This project was developed as a final graduation project for the Data Science and Artificial Intelligence diploma at Tuwaiq Academy.
 
-يقوم التطبيق بإرسال الصورة الملتقطة إلى Google Gemini API لتحليلها وإرجاعها كبيانات منظمة (JSON). يتم عرض هذه المكونات في لوحة تحكم تفاعلية. يمكن للمستخدم حفظ هذه النتائج في سجل محلي. عند اختيار مكون معين، يتم استدعاء Gemini مرة أخرى لجلب تفاصيل فنية عنه وإنشاء صورة توضيحية له.
+## ✨ Key Features
 
-## 🛠️ التقنيات المستخدمة
+- **Instant Camera Recognition:** Point your device's camera or upload an image to get immediate component identification.
+- **Accurate AI Detection:** Powered by the Google Gemini API with optimized prompts for speed and precision.
+- **Comprehensive Details:** Receive a technical summary, key specifications, and a generated image for each identified component.
+- **Scan History:** Save your scan results with a custom name and review them anytime.
+- **Demo Mode:** Explore the app's capabilities with pre-loaded data for various use cases.
+- **Modern UX:** A fully responsive interface with light/dark mode support and interactive loading states.
 
-*   **الواجهة الأمامية:** React, TypeScript, Tailwind CSS, Vite
-*   **إدارة الحالة:** React Context API
-*   **الذكاء الاصطناعي:**
-    *   **Google Gemini API (`@google/genai`)**:
-        *   `gemini-2.5-flash`: لكشف العناصر، استخراج البيانات، والمحادثة.
-        *   `imagen-4.0-generate-001`: لتوليد الصور التوضيحية.
-*   **الأيقونات:** React Icons
+## 🚀 How It Works
 
-## 📂 بنية المشروع
+The application captures an image and sends it to the Google Gemini API for analysis. The API processes the image and returns structured JSON data identifying the components. These components are then displayed on an interactive dashboard. When a user selects a component, another API call fetches detailed technical information and generates a photorealistic image of the part.
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React, TypeScript, Tailwind CSS, Vite
+- **State Management:** React Context API
+- **AI & Image Generation:**
+  - **Google Gemini API (`@google/genai`)**:
+    - `gemini-2.5-flash`: For object detection, data extraction, and chat.
+    - `imagen-4.0-generate-001`: For generating photorealistic component images.
+- **Icons:** React Icons
+
+## 📂 Project Structure
 
 ```
 /
 ├── public/
 ├── src/
-│   ├── components/     # مكونات React
-│   ├── constants/      # الثوابت (الموجهات، الإعدادات)
-│   ├── context/        # React Context لإدارة الحالة
-│   ├── data/           # بيانات الوضع التجريبي
-│   ├── hooks/          # Hooks مخصصة
-│   ├── services/       # خدمة التفاعل مع Gemini API
-│   ├── types/          # تعريفات TypeScript
-│   ├── utils/          # دوال مساعدة
-│   ├── App.tsx         # المكون الرئيسي للتطبيق
-│   ├── main.tsx        # نقطة الدخول للتطبيق
+│   ├── components/     # React Components
+│   ├── constants/      # Prompts, settings, etc.
+│   ├── context/        # React Context for state management
+│   ├── data/           # Demo mode data
+│   ├── hooks/          # Custom React Hooks
+│   ├── services/       # Gemini API service wrapper
+│   ├── types/          # TypeScript definitions
+│   ├── utils/          # Helper functions
+│   ├── App.tsx         # Main application component
+│   ├── main.tsx        # Application entry point
 │   └── index.css
-├── .env.local.example  # مثال لملف متغيرات البيئة
+├── .env.local          # Local environment variables
 ├── index.html
 ├── package.json
 └── README.md
 ```
 
-## 👥 فريق العمل
+## 👥 Team
 
-*   محمد المطيري (Mohammed Almutairi)
-*   خالد العصماني (Khalid Alosmani)
+- Mohammed Almutairi
+- Khalid Alosmani
 
-## ⚙️ تشغيل المشروع محلياً
+## ⚙️ Running Locally
 
-لتشغيل هذا التطبيق محلياً، ستحتاج إلى [Node.js](https://nodejs.org/) (v18 أو أحدث) و npm ومفتاح Google Gemini API.
+To run this application locally, you will need [Node.js](https://nodejs.org/) (v18 or newer), npm, and a Google Gemini API key.
 
-1.  **استنساخ المستودع:**
+1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/username/kashef.git
-    cd kashef
+    git clone https://github.com/Mod578/Kashef.git
+    cd Kashef
     ```
 
-2.  **تثبيت التبعيات:**
+2.  **Install dependencies:**
     ```bash
     npm install
     ```
 
-3.  **إعداد مفتاح API:**
-    *   احصل على مفتاح API الخاص بك من [Google AI Studio](https://aistudio.google.com/app/apikey).
-    *   في المجلد الرئيسي للمشروع، أنشئ ملفًا جديدًا باسم `.env.local`.
-    *   أضف السطر التالي إلى الملف، مع استبدال `your_api_key_here` بمفتاحك الفعلي:
-        ```
-        VITE_GEMINI_API_KEY=your_api_key_here
-        ```
-    *   سيقوم التطبيق تلقائيًا بقراءة هذا المفتاح عند التشغيل محليًا.
+3.  **Set up the API Key:**
+    - Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+    - In the project's root directory, create a new file named `.env.local`.
+    - Add the following line, replacing `your_api_key_here` with your actual key:
+      ```
+      VITE_GEMINI_API_KEY=your_api_key_here
+      ```
 
-4.  **تشغيل خادم التطوير:**
+4.  **Run the development server:**
     ```bash
     npm run dev
     ```
-    سيقوم هذا بتشغيل التطبيق على عنوان محلي (عادة `http://localhost:5173`). افتح هذا العنوان في متصفحك.
-
-> **ملاحظة:** تم تكويد التطبيق للبحث عن `VITE_GEMINI_API_KEY` للتشغيل المحلي، وعن `API_KEY` في بيئات النشر (Deployment)، مما يضمن المرونة بين التطوير والإنتاج.
+    The application will be available at `http://localhost:5173`.
 
 ## 🤝 المساهمة (Contributing)
 
