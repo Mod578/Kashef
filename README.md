@@ -22,7 +22,7 @@
 
 ## 🎯 The Goal
 
-The world of PC hardware can be intimidating for newcomers. "Kashef" (Arabic for "Detector" or "Revealer") aims to demystify computer components by providing a simple, visual way to identify parts and understand their purpose.
+The world of PC hardware can be intimidating for newcomers. "Kashef" aims to demystify computer components by providing a simple, visual way to identify parts and understand their purpose.
 
 This project was developed as a final graduation project for the Data Science and Artificial Intelligence diploma at Tuwaiq Academy.
 
