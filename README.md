@@ -22,9 +22,10 @@ Built as the graduation project for the Data Science and Artificial Intelligence
 ## Quick start
 
 ```bash
-git clone https://github.com/Mod578/Kashef.git && cd Kashef
-npm install && cp .env.example .env.local   # then put your Gemini key in it
-npm run dev                                  # http://localhost:5173
+git clone https://github.com/Mod578/Kashef.git
+cd Kashef && npm install
+cp .env.example .env.local   # add your Gemini key
+npm run dev                  # http://localhost:5173
 ```
 
 Get a key from [Google AI Studio](https://aistudio.google.com/app/apikey). Camera capture needs HTTPS anywhere other than localhost.
