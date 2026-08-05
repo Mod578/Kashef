@@ -1,123 +1,126 @@
-# Kashef - AI Hardware Component Identifier
+<div align="center">
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Mod578/Kashef/master/public/favicon.svg" alt="Kashef Logo" width="150">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/header-dark.svg">
+  <img src="docs/assets/header-light.svg" alt="Kashef: identify PC hardware from a camera frame" width="880">
+</picture>
+
+<p>
+  <a href="https://github.com/Mod578/Kashef/actions/workflows/ci.yml"><img src="https://github.com/Mod578/Kashef/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/Mod578/Kashef" alt="Licence"></a>
+  <img src="https://img.shields.io/badge/node-%3E%3D18-339933?logo=nodedotjs&logoColor=white" alt="Node 18 or newer">
 </p>
 
-<h1 align="center">Kashef (كاشف)</h1>
+</div>
 
-<p align="center">
-  An intelligent web application that instantly identifies PC components using your device's camera and AI, providing detailed technical specs and an integrated chat assistant for all your hardware questions.
-</p>
+**كاشف** identifies computer hardware from a camera frame and explains it in Arabic. Point the camera at a part or upload a photo, and the answer comes back as structured data: component name, type, a short technical summary, and a list of specifications. A chat assistant is attached to each detected part for follow-up questions about compatibility and upgrades.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React">
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite">
-  <img src="https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white" alt="Google Gemini">
-</p>
+Built as the graduation project for the Data Science and Artificial Intelligence diploma at Tuwaiq Academy. The interface is Arabic and right to left throughout.
 
----
+**Status:** working and usable. No automated test suite yet, and it has not been through a production deployment.
 
-## 🎯 The Goal
+## Quick start
 
-Identifying PC hardware can be a major hurdle for newcomers and hobbyists alike. Kashef (Arabic for "Detector" or "Revealer") simplifies this process into a seamless, three-step experience:
+```bash
+git clone https://github.com/Mod578/Kashef.git && cd Kashef
+npm install && cp .env.example .env.local   # then put your Gemini key in it
+npm run dev                                  # http://localhost:5173
+```
 
-1.  **Scan & Identify:** Use your camera or upload an image to get instant, accurate component identification.
-2.  **Get Details:** Review a technical summary, key specs, and a generated image for each part.
-3.  **Ask the Expert:** Chat with an integrated AI assistant to ask about compatibility, performance, and more.
+Get a key from [Google AI Studio](https://aistudio.google.com/app/apikey). Camera capture needs HTTPS anywhere other than localhost.
 
-This project was developed as a final graduation project for the Data Science and Artificial Intelligence diploma at Tuwaiq Academy.
+## Features
 
-## ✨ Key Features
+- Identification from the device camera, an uploaded image, or an MP4 or WebM video frame
+- Structured output enforced by a response schema, so specifications arrive as data rather than prose
+- Generated reference image for a selected component, using Imagen
+- Chat assistant grounded with Google Search for current information
+- Scan history kept in the browser
+- Light and dark themes, responsive RTL layout
 
-- **📸 Instant Camera Recognition:** Analyze PC components in real-time using your device's camera or by uploading images and video files.
-- **🧠 Accurate AI Detection:** Powered by the latest Google Gemini models for high-precision component identification and spec extraction.
-- **📋 Comprehensive Details:** Get a technical summary and organized key specifications for every detected component.
-- **🖼️ Visual Component Rendering:** Generate high-quality, realistic images of detected components using the Imagen 4 model for better understanding.
-- **🤖 Integrated AI Assistant:** Ask questions and get accurate answers about components, backed by Google Search for up-to-date information.
-- **🎨 Modern & Interactive UI:** A fully responsive interface that supports both light and dark modes for a comfortable user experience.
+## How it works
 
-## 🚀 How It Works
+1. A frame goes to `gemini-2.5-flash` with a JSON response schema that fixes the shape of the answer.
+2. The parsed components render on a dashboard, each with a deterministic id derived from its name.
+3. Selecting a component calls `imagen-4.0-generate-001` for an illustrative image and opens a chat session seeded with that component's context.
+4. General questions go to a separate chat session with Google Search enabled as a tool.
 
-The application sends the captured image to the Google Gemini API, which analyzes it, identifies the components, and returns structured JSON data. This data is then displayed on an interactive dashboard. When a component is selected, the `imagen` model is called to generate an illustrative image, and the chat assistant is initialized with the component's context to provide precise, relevant answers.
+## Tech stack
 
-## 🛠️ Tech Stack
+![React](https://img.shields.io/badge/React-18-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?style=flat-square&logo=tailwindcss&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini%20API-4285F4?style=flat-square&logo=googlegemini&logoColor=white)
 
-- **Frontend:** React, TypeScript, Tailwind CSS, Vite
-- **State Management:** React Context API
-- **AI & Image Generation (Google Gemini API):**
-    -   `gemini-2.5-flash`: For object detection, data extraction, and intelligent chat.
-    -   `imagen-4.0-generate-001`: For generating illustrative component images.
-- **Icons:** React Icons
+State lives in React Context with custom hooks. There is no backend.
 
-## 📂 Project Structure
+<details>
+<summary><b>Configuration and scripts</b></summary>
+
+| Variable | Where | Purpose |
+| --- | --- | --- |
+| `VITE_GEMINI_API_KEY` | `.env.local` for local work | Gemini API key |
+| `API_KEY` | deployment environment | the same key, read as a fallback by `vite.config.ts` |
+
+`vite.config.ts` substitutes whichever one is set into `process.env.API_KEY` at build time. `.env.local` is ignored by git.
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Vite dev server |
+| `npm run typecheck` | `tsc --noEmit` |
+| `npm run build` | type check, then production build into `dist/` |
+| `npm run preview` | serve the built output locally |
+
+</details>
+
+<details>
+<summary><b>Project layout</b></summary>
 
 ```
-/
-├── public/
+.
+├── .github/workflows/   CI: type check and build
+├── public/              favicon and static assets
 ├── src/
-│   ├── components/     # React Components
-│   ├── constants/      # Prompts, settings, etc.
-│   ├── context/        # React Context for state management
-│   ├── hooks/          # Custom React Hooks
-│   ├── services/       # Gemini API service wrapper
-│   ├── types/          # TypeScript definitions
-│   ├── utils/          # Helper functions
-│   ├── App.tsx         # Main application component
-│   └── main.tsx        # Application entry point
+│   ├── components/      UI components
+│   ├── constants/       prompts and model names
+│   ├── context/         app state
+│   ├── data/            demo dataset
+│   ├── hooks/           camera, storage, component data
+│   ├── services/        Gemini wrapper
+│   ├── types/           shared types
+│   ├── utils/           helpers
+│   ├── App.tsx
+│   ├── index.css        Tailwind entry
+│   └── main.tsx         application entry
 ├── index.html
-├── package.json
-└── README.md
+├── tailwind.config.js
+└── vite.config.ts
 ```
 
-## 👥 Team
+</details>
 
-- Mohammed Almutairi
-- Khalid Alosmani
+## Deployment
 
-## ⚙️ Running Locally
+`npm run build` produces a static `dist/` that any static host will serve.
 
-To run this application locally, you will need [Node.js](https://nodejs.org/) (v18 or newer), npm, and a Google Gemini API key.
+**Before deploying publicly:** the API key is inlined into the client bundle at build time, so anyone who loads the page can read it. Put the key behind a small backend proxy and call that instead, or restrict it by referrer and quota in Google AI Studio.
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/Mod578/Kashef.git
-    cd Kashef
-    ```
+## Limitations
 
-2.  **Install dependencies:**
-    ```bash
-    npm install
-    ```
+- Identification quality depends on lighting, angle and how visible the model markings are. Confidence is reported per component and can be wrong.
+- Generated component images are illustrations, not photographs of the exact part.
+- No automated tests yet. CI runs type checking and the build.
+- Requires network access, nothing works offline.
 
-3.  **Set up the API Key:**
-    *   Get your API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
-    *   In the project's root directory, create a new file named `.env.local`.
-    *   Add the following line, replacing `your_api_key_here` with your actual key:
-        ```
-        VITE_GEMINI_API_KEY=your_api_key_here
-        ```
+## Privacy
 
-4.  **Run the development server:**
-    ```bash
-    npm run dev
-    ```
-    The application will be available at `http://localhost:5173`.
+Images and video frames are sent to the Gemini API for analysis, and nowhere else. Scan history is stored in the browser's local storage. There is no backend and no account.
 
-> **Note:** The app is configured to look for `VITE_GEMINI_API_KEY` for local development and `API_KEY` in deployment environments, ensuring flexibility between development and production.
+## Team
 
-## 🤝 Contributing
+Mohammed Almutairi and Khalid Alosmani.
 
-Contributions to improve Kashef are welcome! Please follow these steps:
+## License
 
-1.  Fork the repository.
-2.  Create a new branch for your feature (`git checkout -b feature/AmazingFeature`).
-3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4.  Push to the branch (`git push origin feature/AmazingFeature`).
-5.  Open a Pull Request.
-
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
+[MIT](LICENSE).
