@@ -1,7 +1,7 @@
 import type { DemoData, DemoComponent } from '../types';
 import { FaBalanceScale, FaMedkit } from 'react-icons/fa';
-import { 
-    FaMugHot, FaFilter,
+import {
+    FaFilter,
     FaGrip, FaHandHoldingMedical,
     FaMicrochip,
     FaBolt,

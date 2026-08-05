@@ -19,7 +19,7 @@ import { GeminiService } from './services/geminiService';
 import { GENERAL_CHAT_SYSTEM_INSTRUCTION, getComponentChatSystemInstruction } from './constants';
 
 // Types
-import type { VideoPlayerRef, MobileTab } from './types';
+import type { VideoPlayerRef, MobileTab, ChatMessage } from './types';
 
 // Icons
 import { LuLayoutDashboard, LuScanLine } from 'react-icons/lu';
@@ -50,7 +50,7 @@ const App: React.FC = () => {
     // Gemini Service and Chat State
     const geminiService = useRef<GeminiService | null>(null);
     const [chatSession, setChatSession] = useState<GeminiChat | null>(null);
-    const [chatHistory, setChatHistory] = useState([]);
+    const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
 
     // Refs
     const videoPlayerRef = useRef<VideoPlayerRef>(null);

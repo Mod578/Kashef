@@ -153,7 +153,7 @@ export class GeminiService {
                 },
             });
             
-            const jsonText = response.text.trim();
+            const jsonText = (response.text ?? '').trim();
             if (!jsonText) {
                 return [];
             }
