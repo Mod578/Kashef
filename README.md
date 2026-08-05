@@ -13,7 +13,7 @@
 
 </div>
 
-**كاشف** identifies computer hardware from a camera frame and explains it in Arabic. Point the camera at a part or upload a photo, and the answer comes back as structured data: component name, type, a short technical summary, and a list of specifications. A chat assistant is attached to each detected part for follow-up questions about compatibility and upgrades.
+**Kashef** (كاشف) identifies computer hardware from a camera frame and explains it in Arabic. Point the camera at a part or upload a photo, and the answer comes back as structured data: component name, type, a short technical summary, and a list of specifications. A chat assistant is attached to each detected part for follow-up questions about compatibility and upgrades.
 
 Built as the graduation project for the Data Science and Artificial Intelligence diploma at Tuwaiq Academy. The interface is Arabic and right to left throughout.
 
