@@ -6,7 +6,7 @@
 </picture>
 
 <p>
-  <a href="https://github.com/Mod578/Kashef/actions/workflows/ci.yml"><img src="https://github.com/Mod578/Kashef/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+  <a href="https://github.com/Mod578/Kashef/actions/workflows/ci.yml"><img src="https://github.com/Mod578/Kashef/actions/workflows/ci.yml/badge.svg?branch=master" alt="CI status"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/Mod578/Kashef" alt="Licence"></a>
   <img src="https://img.shields.io/badge/node-%3E%3D18-339933?logo=nodedotjs&logoColor=white" alt="Node 18 or newer">
 </p>
