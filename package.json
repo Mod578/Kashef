@@ -4,8 +4,33 @@
   "version": "1.0.0",
   "description": "كاشف: مساعدك الذكي للتعرف الفوري على مكونات الحاسب. وجّه الكاميرا لتحصل على تحديد دقيق ومعلومات مفصلة.",
   "type": "module",
+  "license": "MIT",
+  "author": "Mohammed Almutairi",
+  "contributors": [
+    "Khalid Alosmani"
+  ],
+  "keywords": [
+    "gemini",
+    "computer-vision",
+    "pc-hardware",
+    "react",
+    "typescript",
+    "arabic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mod578/Kashef.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mod578/Kashef/issues"
+  },
+  "homepage": "https://github.com/Mod578/Kashef#readme",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
+    "typecheck": "tsc --noEmit",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
